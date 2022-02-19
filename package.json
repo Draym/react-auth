@@ -1,7 +1,7 @@
 {
   "name": "react-auth",
   "homepage": "https://draym.github.io/react-auth",
-  "description": "RTC test",
+  "description": "ReactJs boilerplate for Authentication",
   "author": {
     "name": "Kevin Andres",
     "email": "kevin.andres@epitech.eu"
