@@ -24,6 +24,7 @@ interface AppState {
 export default class App extends Component<AppProperties, AppState> {
 
   render() {
+    // TODO handle auth restriction on pages
     return <div>
       <main role="main">
         <BrowserRouter basename={routerBaseName}>
