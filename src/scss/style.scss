@@ -1,0 +1,13 @@
+// import npm scss here
+@import "node_modules/bootstrap/scss/bootstrap";
+
+// Variables
+@import "variables";
+
+// CSS
+@import "align";
+@import "footer";
+@import "navbar";
+
+// ie fixes
+@import "ie-fix";
