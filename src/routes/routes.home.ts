@@ -4,10 +4,12 @@ import RoutePath from "./Route";
 
 const HomeView = React.lazy(() => import("../web/home/views/HomeView"));
 
+const base: string = process.env.REACT_APP_PUBLIC_URL || '';
+
 const routes: RoutePath[] = [
     {
         name: 'Home',
-        path: '/home',
+        path: `${base}/home`,
         exact: true,
         component: HomeView,
         restrictedBy: {validate: AuthUtils.requireSession, redirectOnFailure: '/'}

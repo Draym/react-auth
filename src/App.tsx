@@ -17,6 +17,8 @@ interface AppProperties {
 interface AppState {
 }
 
+const base: string = process.env.REACT_APP_PUBLIC_URL || '';
+
 export default class App extends Component<AppProperties, AppState> {
 
     loading = () => <div className="animated fadeIn pt-1 text-center">Loading...</div>;
@@ -42,7 +44,7 @@ export default class App extends Component<AppProperties, AppState> {
                                     )}/>
                             ) : null;
                         })}
-                        <Redirect path="*" to={'/404'}/>
+                        <Redirect path="*" to={`${base}/404`}/>
                     </Switch>
                 </Suspense>
             </BrowserRouter>
