@@ -5,7 +5,7 @@ import RoutePath from "./Route";
 const LoginView = React.lazy(() => import("../web/auth/views/login/LoginView"));
 const SignUpView = React.lazy(() => import("../web/auth/views/signup/SignUpView"));
 
-const base: string = process.env.REACT_APP_PUBLIC_URL || '';
+const base: string = process.env.REACT_APP_BASE_URL || '';
 
 const routes: RoutePath[] = [
     {

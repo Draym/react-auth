@@ -4,7 +4,7 @@ import RoutePath from "./Route";
 
 const HomeView = React.lazy(() => import("../web/home/views/HomeView"));
 
-const base: string = process.env.REACT_APP_PUBLIC_URL || '';
+const base: string = process.env.REACT_APP_BASE_URL || '';
 
 const routes: RoutePath[] = [
     {
