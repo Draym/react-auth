@@ -72,7 +72,7 @@ class LoginView extends Component<LoginViewProperties, LoginViewState> {
         this.login(this.state.email, this.state.password)
     }
 
-    handleSubmitLoginWithMetamask() {
+    handleSubmitLoginWithMetamask = async () => {
         const publicAddress = Web3SDK.getDefaultAccount()
         if (publicAddress == null) {
             this.setState({error: "Select an account on your Metamask."})
@@ -80,7 +80,6 @@ class LoginView extends Component<LoginViewProperties, LoginViewState> {
         }
         ApiSDK.auth.quickLogin.ethGetNonce({publicAddress: publicAddress}).then(r => {
             Web3SDK.sign(publicAddress, r.nonce).then(signature => {
-                console.log('signature:', signature)
                 this.loginWithMetamask(publicAddress, signature)
             }, e => {
                 this.setState({submitBusy: false, error: e.error})

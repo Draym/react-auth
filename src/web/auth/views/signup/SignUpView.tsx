@@ -56,11 +56,9 @@ class SignUpView extends Component<SignUpViewProperties, SignUpViewState> {
                 SessionStorage.storeSession(response.token)
                 this.props.history.push('/home')
             }, e => {
-                console.log('error', e)
                 this.setState({submitBusy: false, error: e.error})
             })
         }, e => {
-            console.log('error', e)
             this.setState({submitBusy: false, error: e.error})
         })
     }
@@ -78,11 +76,9 @@ class SignUpView extends Component<SignUpViewProperties, SignUpViewState> {
                 SessionStorage.storeSession(response.token)
                 this.props.history.push('/home')
             }, e => {
-                console.log('error', e)
                 this.setState({submitBusy: false, error: e.error})
             })
         }, e => {
-            console.log('error', e)
             this.setState({submitBusy: false, error: e.error})
         })
     }

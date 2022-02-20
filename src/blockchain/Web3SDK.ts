@@ -46,7 +46,7 @@ export default class Web3SDK {
 
     static async sign(publicAddress: string, text: string): Promise<string> {
         const message = `Signing with Metamask: ${text}`
-        return await window.ethereum.personal.sign(window.ethereum.fromUtf8(message), publicAddress, '')
+        return window.web3.eth.personal.sign(window.web3.utils.fromUtf8(message), publicAddress, '')
     }
 
     // @ts-ignore
@@ -55,12 +55,11 @@ export default class Web3SDK {
     }
 
     static async getNetwork(): Promise<bigint> {
-        console.log("get network")
         return window.web3.eth.net.getId()
     }
 
     static async getAccounts(): Promise<Address[]> {
-        return await window.ethereum.request({method: 'eth_accounts'})
+        return window.ethereum.request({method: 'eth_accounts'})
     }
 
     static getDefaultAccount(): Address | null {
