@@ -109,7 +109,7 @@ class SignUpView extends Component<SignUpViewProperties, SignUpViewState> {
                         {!this.state.submitBusy && <span>Submit</span>}
                     </Button>
                     <p className="is-registered text-right">
-                        Already registered <a href="#" onClick={this.goToLogin}>sign in?</a>
+                        Already registered <a href="/#" onClick={this.goToLogin}>sign in?</a>
                     </p>
                 </form>
             </div>

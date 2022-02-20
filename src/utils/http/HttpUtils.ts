@@ -35,7 +35,7 @@ export default class HttpUtils {
     }
 
     private static createUrl(domain: string | null, endpoint: string, urlParameters: string | null): string {
-        if (domain != null && domain.slice(-1) != '/') {
+        if (domain != null && domain.slice(-1) !== '/') {
             domain += '/'
         }
         return (domain || '') + endpoint + (urlParameters || '')

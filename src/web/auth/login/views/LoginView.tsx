@@ -89,7 +89,7 @@ class LoginView extends Component<LoginViewProperties, LoginViewState> {
                         {!this.state.submitBusy && <span>Submit</span>}
                     </Button>
                     <p className="forgot-password text-right">
-                        Forgot <a href="#">password?</a>
+                        Forgot <a href="/#">password?</a>
                     </p>
                 </form>
             </div>
