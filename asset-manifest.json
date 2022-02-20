@@ -1,12 +1,12 @@
 {
   "files": {
-    "static/js/0.d3bf917a.chunk.js": "/react-auth/static/js/0.d3bf917a.chunk.js",
-    "static/js/0.d3bf917a.chunk.js.map": "/react-auth/static/js/0.d3bf917a.chunk.js.map",
+    "static/js/0.f491259a.chunk.js": "/react-auth/static/js/0.f491259a.chunk.js",
+    "static/js/0.f491259a.chunk.js.map": "/react-auth/static/js/0.f491259a.chunk.js.map",
     "main.css": "/react-auth/static/css/main.45c4a328.chunk.css",
-    "main.js": "/react-auth/static/js/main.3a50fd20.chunk.js",
-    "main.js.map": "/react-auth/static/js/main.3a50fd20.chunk.js.map",
-    "runtime-main.js": "/react-auth/static/js/runtime-main.f3348eee.js",
-    "runtime-main.js.map": "/react-auth/static/js/runtime-main.f3348eee.js.map",
+    "main.js": "/react-auth/static/js/main.2ea73529.chunk.js",
+    "main.js.map": "/react-auth/static/js/main.2ea73529.chunk.js.map",
+    "runtime-main.js": "/react-auth/static/js/runtime-main.cbe87db3.js",
+    "runtime-main.js.map": "/react-auth/static/js/runtime-main.cbe87db3.js.map",
     "static/js/3.1c686d74.chunk.js": "/react-auth/static/js/3.1c686d74.chunk.js",
     "static/js/3.1c686d74.chunk.js.map": "/react-auth/static/js/3.1c686d74.chunk.js.map",
     "static/css/4.27424e91.chunk.css": "/react-auth/static/css/4.27424e91.chunk.css",
@@ -27,16 +27,16 @@
     "static/css/4.27424e91.chunk.css.map": "/react-auth/static/css/4.27424e91.chunk.css.map",
     "static/css/5.f611d2e0.chunk.css.map": "/react-auth/static/css/5.f611d2e0.chunk.css.map",
     "static/css/main.45c4a328.chunk.css.map": "/react-auth/static/css/main.45c4a328.chunk.css.map",
-    "static/js/0.d3bf917a.chunk.js.LICENSE.txt": "/react-auth/static/js/0.d3bf917a.chunk.js.LICENSE.txt",
+    "static/js/0.f491259a.chunk.js.LICENSE.txt": "/react-auth/static/js/0.f491259a.chunk.js.LICENSE.txt",
     "static/js/3.1c686d74.chunk.js.LICENSE.txt": "/react-auth/static/js/3.1c686d74.chunk.js.LICENSE.txt",
     "static/js/6.80e49486.chunk.js.LICENSE.txt": "/react-auth/static/js/6.80e49486.chunk.js.LICENSE.txt",
     "static/js/7.e5f7d39c.chunk.js.LICENSE.txt": "/react-auth/static/js/7.e5f7d39c.chunk.js.LICENSE.txt",
     "static/js/8.5783245b.chunk.js.LICENSE.txt": "/react-auth/static/js/8.5783245b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.f3348eee.js",
+    "static/js/runtime-main.cbe87db3.js",
     "static/js/3.1c686d74.chunk.js",
     "static/css/main.45c4a328.chunk.css",
-    "static/js/main.3a50fd20.chunk.js"
+    "static/js/main.2ea73529.chunk.js"
   ]
 }
