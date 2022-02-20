@@ -1,15 +1,33 @@
 {
   "files": {
-    "main.css": "/react-auth/static/css/main.fd13048e.css",
-    "main.js": "/react-auth/static/js/main.f6edd610.js",
+    "main.css": "/react-auth/static/css/main.19687374.css",
+    "main.js": "/react-auth/static/js/main.c4255532.js",
+    "static/js/161.ab5ca60d.chunk.js": "/react-auth/static/js/161.ab5ca60d.chunk.js",
+    "static/js/67.3cf5f81e.chunk.js": "/react-auth/static/js/67.3cf5f81e.chunk.js",
+    "static/css/479.1782c959.chunk.css": "/react-auth/static/css/479.1782c959.chunk.css",
+    "static/js/479.6614cd1c.chunk.js": "/react-auth/static/js/479.6614cd1c.chunk.js",
+    "static/css/907.d4cbcf8d.chunk.css": "/react-auth/static/css/907.d4cbcf8d.chunk.css",
+    "static/js/907.bb49047a.chunk.js": "/react-auth/static/js/907.bb49047a.chunk.js",
+    "static/js/502.8a8edc25.chunk.js": "/react-auth/static/js/502.8a8edc25.chunk.js",
     "static/js/787.f8f5a804.chunk.js": "/react-auth/static/js/787.f8f5a804.chunk.js",
+    "static/js/890.6dc3784c.chunk.js": "/react-auth/static/js/890.6dc3784c.chunk.js",
+    "static/js/463.b7102f69.chunk.js": "/react-auth/static/js/463.b7102f69.chunk.js",
     "index.html": "/react-auth/index.html",
-    "main.fd13048e.css.map": "/react-auth/static/css/main.fd13048e.css.map",
-    "main.f6edd610.js.map": "/react-auth/static/js/main.f6edd610.js.map",
-    "787.f8f5a804.chunk.js.map": "/react-auth/static/js/787.f8f5a804.chunk.js.map"
+    "main.19687374.css.map": "/react-auth/static/css/main.19687374.css.map",
+    "main.c4255532.js.map": "/react-auth/static/js/main.c4255532.js.map",
+    "161.ab5ca60d.chunk.js.map": "/react-auth/static/js/161.ab5ca60d.chunk.js.map",
+    "67.3cf5f81e.chunk.js.map": "/react-auth/static/js/67.3cf5f81e.chunk.js.map",
+    "479.1782c959.chunk.css.map": "/react-auth/static/css/479.1782c959.chunk.css.map",
+    "479.6614cd1c.chunk.js.map": "/react-auth/static/js/479.6614cd1c.chunk.js.map",
+    "907.d4cbcf8d.chunk.css.map": "/react-auth/static/css/907.d4cbcf8d.chunk.css.map",
+    "907.bb49047a.chunk.js.map": "/react-auth/static/js/907.bb49047a.chunk.js.map",
+    "502.8a8edc25.chunk.js.map": "/react-auth/static/js/502.8a8edc25.chunk.js.map",
+    "787.f8f5a804.chunk.js.map": "/react-auth/static/js/787.f8f5a804.chunk.js.map",
+    "890.6dc3784c.chunk.js.map": "/react-auth/static/js/890.6dc3784c.chunk.js.map",
+    "463.b7102f69.chunk.js.map": "/react-auth/static/js/463.b7102f69.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fd13048e.css",
-    "static/js/main.f6edd610.js"
+    "static/css/main.19687374.css",
+    "static/js/main.c4255532.js"
   ]
 }
