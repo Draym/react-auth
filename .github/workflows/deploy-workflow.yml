@@ -5,6 +5,7 @@ on:
     branches: [main]
 
 env:
+  REACT_APP_PUBLIC_URL: ${{ secrets.REACT_APP_PUBLIC_URL }}
   REACT_APP_API_ENDPOINT: ${{ secrets.REACT_APP_API_ENDPOINT }}
 
 jobs:
