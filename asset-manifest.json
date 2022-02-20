@@ -3,8 +3,8 @@
     "static/js/0.d3bf917a.chunk.js": "/react-auth/static/js/0.d3bf917a.chunk.js",
     "static/js/0.d3bf917a.chunk.js.map": "/react-auth/static/js/0.d3bf917a.chunk.js.map",
     "main.css": "/react-auth/static/css/main.45c4a328.chunk.css",
-    "main.js": "/react-auth/static/js/main.b64d1ff4.chunk.js",
-    "main.js.map": "/react-auth/static/js/main.b64d1ff4.chunk.js.map",
+    "main.js": "/react-auth/static/js/main.8f0fda15.chunk.js",
+    "main.js.map": "/react-auth/static/js/main.8f0fda15.chunk.js.map",
     "runtime-main.js": "/react-auth/static/js/runtime-main.f3348eee.js",
     "runtime-main.js.map": "/react-auth/static/js/runtime-main.f3348eee.js.map",
     "static/js/3.1c686d74.chunk.js": "/react-auth/static/js/3.1c686d74.chunk.js",
@@ -37,6 +37,6 @@
     "static/js/runtime-main.f3348eee.js",
     "static/js/3.1c686d74.chunk.js",
     "static/css/main.45c4a328.chunk.css",
-    "static/js/main.b64d1ff4.chunk.js"
+    "static/js/main.8f0fda15.chunk.js"
   ]
 }
