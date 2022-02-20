@@ -37,7 +37,7 @@ class LoginView extends Component<LoginViewProperties, LoginViewState> {
     }
 
     private static inputsAreValid(email: string, password: string): boolean {
-        return email != '' && password != ''
+        return email !== '' && password !== ''
     }
 
     private login(email: string, password: string) {

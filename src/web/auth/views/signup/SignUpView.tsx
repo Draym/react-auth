@@ -40,7 +40,7 @@ class SignUpView extends Component<SignUpViewProperties, SignUpViewState> {
     }
 
     private static inputsAreValid(email: string, username: string, password: string): boolean {
-        return email != '' && username != '' && password != ''
+        return email !== '' && username !== '' && password !== ''
     }
 
     private signup(email: string, username: string, password: string) {
