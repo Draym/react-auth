@@ -42,10 +42,10 @@ class MainView extends Component<MainViewProperties, MainViewState> {
             return <div className="content">
                 <MainNavbar/>
                 <div className="container-fluid">
-                    <h2>Welcome to this awesome website</h2>
+                    <h2 className="text-center mt-4">Welcome to this awesome website</h2>
                     <div className="row">
-                        <div className="col-md-12">
-                            <Button variant="success" onClick={this.login}>
+                        <div className="col-md-12 mt-4 text-center">
+                            <Button className="me-3" variant="success" onClick={this.login}>
                                 Login
                             </Button>
                             <Button variant="info" onClick={this.signup}>
