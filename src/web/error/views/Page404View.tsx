@@ -19,7 +19,7 @@ class Page404View extends Component<Page404ViewProperties, Page404ViewState> {
     }
 
     render() {
-        return <div className="App">
+        return <div className="content">
             <div className="container-fluid">
                 <h2>oups you are lost</h2>
                 <Button variant="info" onClick={this.backToMain}>

@@ -39,7 +39,7 @@ class MainView extends Component<MainViewProperties, MainViewState> {
         if (this.state.loading) {
             return <MainLoading/>
         } else {
-            return <div className="App">
+            return <div className="content">
                 <MainNavbar/>
                 <div className="container-fluid">
                     <h2>Welcome to this awesome website</h2>

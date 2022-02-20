@@ -3,6 +3,9 @@ import SessionStorage from '../storage/UserStorage'
 export interface SuccessResponse<T> {
     data: T
 }
+export interface ErrorResponse {
+    data: { error: string }
+}
 
 export enum ApiError {
     UNAUTHORIZED,
@@ -10,7 +13,7 @@ export enum ApiError {
     OTHER
 }
 
-export interface ErrorResponse {
+export interface ErrorDTO {
     type: ApiError
     error: string
 }
@@ -41,7 +44,7 @@ export default class HttpUtils {
     private static handleHttpResult<T>(
         response: Response,
         onSuccess: (data: T) => void,
-        onError: (error: ErrorResponse) => void) {
+        onError: (error: ErrorDTO) => void) {
         console.log('[HTTP]', response);
         if (response.redirected || response.status === 302) {
             console.log('[HTTP] redirection');
@@ -54,7 +57,6 @@ export default class HttpUtils {
             });
         } else {
             response.text().then(function (text) {
-                console.log('result:'+text)
                 const status = response.status;
                 if (status === 200) {
                     const success: SuccessResponse<T> = JSON.parse(text)
@@ -62,7 +64,7 @@ export default class HttpUtils {
                 } else {
                     const error: ErrorResponse = JSON.parse(text)
                     onError({
-                        error: error.error,
+                        error: error.data.error,
                         type: ApiError.SERVER_ERROR
                     });
                 }
@@ -77,7 +79,7 @@ export default class HttpUtils {
         headers: { [key: string]: string },
         parameters: { [key: string]: string } | null,
         onSuccess: (data: T) => void,
-        onError: (error: ErrorResponse) => void) {
+        onError: (error: ErrorDTO) => void) {
 
         if (SessionStorage.hasSession()) {
             let token = SessionStorage.getSessionToken()
@@ -96,7 +98,7 @@ export default class HttpUtils {
         }).catch(error => {
             console.log('[API][ERROR]-->', error)
             onError({
-                error: error.error,
+                error: JSON.stringify(error.error),
                 type: ApiError.OTHER
             });
         })
@@ -109,14 +111,13 @@ export default class HttpUtils {
         headers: { [key: string]: string },
         data: BodyInit,
         onSuccess: (data: T) => void,
-        onError: (error: ErrorResponse) => void) {
+        onError: (error: ErrorDTO) => void) {
 
         if (SessionStorage.hasSession()) {
             let token = SessionStorage.getSessionToken()
             if (token)
                 headers['Authorization'] = token
         }
-        console.log('endpoint:' + endpoint)
         let url: string = this.createUrl(domain, endpoint, null)
 
         console.log('[API_' + type + ']: ' + url)
@@ -135,27 +136,27 @@ export default class HttpUtils {
         })
     }
 
-    static get<T>(domain: string | null, endpoint: string, parameters: { [key: string]: string } | null, onSuccess: (data: T) => void, onError: (error: ErrorResponse) => void) {
+    static get<T>(domain: string | null, endpoint: string, parameters: { [key: string]: string } | null, onSuccess: (data: T) => void, onError: (error: ErrorDTO) => void) {
         let headers: { [key: string]: string } = {}
         headers['Access-Control-Allow-Origin'] = '*'
         this.httpURL('GET', domain, endpoint, headers, parameters, onSuccess, onError)
     }
 
-    static post<T>(domain: string | null, endpoint: string, data: {}, onSuccess: (data: T) => void, onError: (error: ErrorResponse) => void) {
+    static post<T>(domain: string | null, endpoint: string, data: {}, onSuccess: (data: T) => void, onError: (error: ErrorDTO) => void) {
         let headers: { [key: string]: string } = {}
         headers['Content-Type'] = 'application/json'
         headers['Accept'] = 'application/json'
         this.httpData('POST', domain, endpoint, headers, JSON.stringify(data), onSuccess, onError)
     }
 
-    static put<T>(domain: string | null, endpoint: string, data: {}, onSuccess: (data: T) => void, onError: (error: ErrorResponse) => void) {
+    static put<T>(domain: string | null, endpoint: string, data: {}, onSuccess: (data: T) => void, onError: (error: ErrorDTO) => void) {
         let headers: { [key: string]: string } = {}
         headers['Content-Type'] = 'application/json'
         headers['Accept'] = 'application/json'
         this.httpData('PUT', domain, endpoint, headers, JSON.stringify(data), onSuccess, onError)
     }
 
-    static delete<T>(domain: string | null, endpoint: string, data: {}, onSuccess: (data: T) => void, onError: (error: ErrorResponse) => void) {
+    static delete<T>(domain: string | null, endpoint: string, data: {}, onSuccess: (data: T) => void, onError: (error: ErrorDTO) => void) {
         let headers: { [key: string]: string } = {}
         headers['Content-Type'] = 'application/json'
         headers['Accept'] = 'application/json'

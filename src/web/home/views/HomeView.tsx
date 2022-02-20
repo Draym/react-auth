@@ -46,7 +46,7 @@ class HomeView extends Component<HomeViewProperties, HomeViewState> {
         if (this.state.loading || this.state.user == null) {
             return <HomeLoading/>
         } else {
-            return <div className="App">
+            return <div className="content">
                 <HomeNavbar/>
                 <div className="container-fluid mt-5">
                     <h2>Welcome to your personal home {this.state.user.username}</h2>

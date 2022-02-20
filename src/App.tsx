@@ -22,10 +22,9 @@ export default class App extends Component<AppProperties, AppState> {
     loading = () => <div className="animated fadeIn pt-1 text-center">Loading...</div>;
 
     render() {
-        return <div>
-            <main role="main">
-                <BrowserRouter basename={routerBaseName}>
-                    <Suspense fallback={this.loading()}>
+        return <div className="App">
+            <BrowserRouter basename={routerBaseName}>
+                <Suspense fallback={this.loading()}>
                     <Switch>
                         {routes.map((route, idx) => {
                             return route.component ? (
@@ -45,9 +44,8 @@ export default class App extends Component<AppProperties, AppState> {
                         })}
                         <Redirect path="*" to={'/404'}/>
                     </Switch>
-                    </Suspense>
-                </BrowserRouter>
-            </main>
+                </Suspense>
+            </BrowserRouter>
         </div>
     }
 }
