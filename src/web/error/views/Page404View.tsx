@@ -14,7 +14,7 @@ class Page404View extends Component<Page404ViewProperties, Page404ViewState> {
         this.backToMain = this.backToMain.bind(this)
     }
 
-    backToMain = () => {
+    backToMain() {
         this.props.history.push('/')
     }
 

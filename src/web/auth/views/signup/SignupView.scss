@@ -1,16 +1,22 @@
+
 h1, h2, h3, h4, h5, h6, label, span {
   font-weight: 500;
   font-family: 'Fira Sans', sans-serif;
 }
 
-.content.login {
+h1, h2, h3, h4, h5, h6, label, span {
+  font-weight: 500;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+.content.signup {
   background: #1C8EF9;
   justify-content: center;
   text-align: left;
   font-family: 'Fira Sans', sans-serif;
 }
 
-.login .wrapper {
+.signup .wrapper {
   width: 450px;
   margin: auto;
   background: #ffffff;
@@ -20,36 +26,47 @@ h1, h2, h3, h4, h5, h6, label, span {
   transition: all .3s;
 }
 
-.login .wrapper .form-control:focus {
+.signup .wrapper .form-control:focus {
   border-color: #167bff;
   box-shadow: none;
 }
 
-.login .wrapper h3 {
+.signup .wrapper h3 {
   text-align: center;
   margin: 0;
   line-height: 1;
   padding-bottom: 20px;
 }
 
-.login .wrapper .form-group {
+.signup .wrapper .form-group {
   margin-bottom: 10px;
 }
 
-.login .wrapper .btn {
+.signup .wrapper .btn {
   width: 100%;
 }
 
-.login .exit-btn {
+.signup .exit-btn {
   height: 30px;
   margin-top: -15px;
 }
-.login .exit-btn button {
-float: right;
+
+.signup .exit-btn button {
+  float: right;
 }
 
-.forgot-password,
-.forgot-password a {
+.signup .form-metamask {
+  margin-top: 1rem
+}
+
+.signup .form-metamask .separator{
+  border-top: 1px solid;
+  border-image: linear-gradient(90deg, transparent, rgba(71, 77, 93, 0.6), transparent);
+  border-image-slice: 1;
+}
+
+.is-registered,
+.is-registered a {
   text-align: right;
   font-size: 13px;
   padding-top: 10px;
@@ -57,7 +74,7 @@ float: right;
   margin: 0;
 }
 
-.forgot-password a {
+.is-registered a {
   color: #167bff;
   text-decoration: none
 }

@@ -2,8 +2,8 @@ import React from "react";
 import AuthUtils from "../utils/auth/AuthUtils";
 import RoutePath from "./Route";
 
-const LoginView = React.lazy(() => import("../web/auth/login/views/LoginView"));
-const SignUpView = React.lazy(() => import("../web/auth/signup/views/SignUpView"));
+const LoginView = React.lazy(() => import("../web/auth/views/login/LoginView"));
+const SignUpView = React.lazy(() => import("../web/auth/views/signup/SignUpView"));
 
 const routes: RoutePath[] = [
     {

@@ -4,6 +4,8 @@ import './LoginView.scss';
 import ApiSDK from "../../../../api/ApiSDK";
 import SessionStorage from "../../../../utils/storage/UserStorage";
 import {Alert, Button, CloseButton} from "react-bootstrap";
+import MetamaskButton from "../../components/MetamaskButton";
+import Web3SDK from "../../../../blockchain/Web3SDK";
 
 interface LoginViewProperties extends RouteComponentProps {
 }
@@ -26,15 +28,24 @@ class LoginView extends Component<LoginViewProperties, LoginViewState> {
             error: null
         }
         this.login = this.login.bind(this)
+        this.loginWithMetamask = this.loginWithMetamask.bind(this)
         this.goToMain = this.goToMain.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleSubmitLogin = this.handleSubmitLogin.bind(this)
+        this.handleSubmitLoginWithMetamask = this.handleSubmitLoginWithMetamask.bind(this)
         this.handleEmailChange = this.handleEmailChange.bind(this)
         this.handlePasswordChange = this.handlePasswordChange.bind(this)
     }
 
-    login = (email: string, password: string) => {
-        // TODO handle form errors
+    private static inputsAreValid(email: string, password: string): boolean {
+        return email != '' && password != ''
+    }
 
+    private login(email: string, password: string) {
+        if (!LoginView.inputsAreValid(email, password)) {
+            // TODO detailed errors per fields
+            this.setState({error: "Please correct invalid fields."})
+            return
+        }
         this.setState({submitBusy: true, error: null})
         ApiSDK.auth.login({email: email, password: password}).then(r => {
             this.setState({submitBusy: false})
@@ -45,20 +56,49 @@ class LoginView extends Component<LoginViewProperties, LoginViewState> {
         })
     }
 
-    handleSubmit = async (e: any) => {
+    private loginWithMetamask(publicAddress: string, signature: string) {
+        this.setState({submitBusy: true, error: null})
+        ApiSDK.auth.quickLogin.ethLogin({publicAddress: publicAddress, signature: signature}).then(r => {
+            this.setState({submitBusy: false})
+            SessionStorage.storeSession(r.token)
+            this.props.history.push('/home')
+        }, e => {
+            this.setState({submitBusy: false, error: e.error})
+        })
+    }
+
+    handleSubmitLogin(e: any) {
         e.preventDefault();
         this.login(this.state.email, this.state.password)
     }
 
-    handleEmailChange = async (e: any) => {
+    handleSubmitLoginWithMetamask() {
+        const publicAddress = Web3SDK.getDefaultAccount()
+        if (publicAddress == null) {
+            this.setState({error: "Select an account on your Metamask."})
+            return
+        }
+        ApiSDK.auth.quickLogin.ethGetNonce({publicAddress: publicAddress}).then(r => {
+            Web3SDK.sign(publicAddress, r.nonce).then(signature => {
+                console.log('signature:', signature)
+                this.loginWithMetamask(publicAddress, signature)
+            }, e => {
+                this.setState({submitBusy: false, error: e.error})
+            })
+        }, e => {
+            this.setState({submitBusy: false, error: e.error})
+        })
+    }
+
+    handleEmailChange(e: any) {
         this.setState({email: e.target.value})
     }
 
-    handlePasswordChange = async (e: any) => {
+    handlePasswordChange(e: any) {
         this.setState({password: e.target.value})
     }
 
-    goToMain = (e: any) => {
+    goToMain(e: any) {
         e.preventDefault();
         this.props.history.push('/')
     }
@@ -67,9 +107,9 @@ class LoginView extends Component<LoginViewProperties, LoginViewState> {
         return <div className="content login">
             <div className="wrapper">
                 <div className="exit-btn">
-                    <CloseButton onClick={this.goToMain} />
+                    <CloseButton onClick={this.goToMain}/>
                 </div>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmitLogin}>
                     <h3>Sign In</h3>
                     {this.state.error != null && <Alert variant={'danger'}>{this.state.error}</Alert>}
                     <div className="form-group">
@@ -92,6 +132,10 @@ class LoginView extends Component<LoginViewProperties, LoginViewState> {
                         Forgot <a href="/#">password?</a>
                     </p>
                 </form>
+                <div className="form-metamask">
+                    <div><p className="separator"/></div>
+                    <MetamaskButton text={"Login with Metamask"} callback={this.handleSubmitLoginWithMetamask}/>
+                </div>
             </div>
         </div>
     }

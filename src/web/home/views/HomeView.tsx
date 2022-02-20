@@ -37,7 +37,7 @@ class HomeView extends Component<HomeViewProperties, HomeViewState> {
         })
     }
 
-    logout = () => {
+    logout() {
         SessionStorage.clearSession()
         this.props.history.push('/')
     }

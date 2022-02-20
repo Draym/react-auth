@@ -1,8 +1,8 @@
 import React from "react";
 import RoutePath from "./Route";
 
-import routesAuth from "./routes-auth";
-import routesHome from "./routes-home";
+import routesAuth from "./routes.auth";
+import routesHome from "./routes.home";
 
 const MainView = React.lazy(() => import("../web/main/views/MainView"));
 const Page404View = React.lazy(() => import("../web/error/views/Page404View"));
