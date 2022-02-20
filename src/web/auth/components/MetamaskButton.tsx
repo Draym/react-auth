@@ -19,16 +19,14 @@ export default class MetamaskButton extends Component<MetamaskButtonProperties, 
     }
 
     async onClick(e: any) {
-        const walletConnected = await Web3SDK.isMetamaskConnected()
-        if (walletConnected) {
-            Web3SDK.loadMetamask().then(() => {
-                this.props.callback()
-            })
-        }
+        Web3SDK.loadMetamask().then(r => {
+            this.props.callback()
+        })
     }
 
     render() {
-        return <Button className="metamask-btn" onClick={this.onClick}><Image className="metamask-icon" src={IconImg.METAMASK}/>
+        return <Button className="metamask-btn" onClick={this.onClick}><Image className="metamask-icon"
+                                                                              src={IconImg.METAMASK}/>
             <span className="metamask-btn-text">{this.props.text}</span>
         </Button>
     }

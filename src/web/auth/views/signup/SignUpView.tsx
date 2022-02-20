@@ -92,7 +92,7 @@ class SignUpView extends Component<SignUpViewProperties, SignUpViewState> {
         this.signup(this.state.email, this.state.username, this.state.password)
     }
 
-    handleSubmitLoginWithMetamask() {
+    handleSubmitLoginWithMetamask = async () => {
         const publicAddress = Web3SDK.getDefaultAccount()
         if (publicAddress == null) {
             this.setState({error: "Select an account on your Metamask."})
