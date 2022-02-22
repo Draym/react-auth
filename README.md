@@ -1,9 +1,9 @@
 # React-Auth
 
-Authorisation boilerplate App using ReactJs
+Authentication boilerplate App using ReactJs
 
 Features:
-- authorisation views through routing
+- restricted views through routing
 - authentication to an API
 - auto authentication using Metamask
 - manage session with token
